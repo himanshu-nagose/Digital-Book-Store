@@ -1,0 +1,123 @@
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Book Card Styling */
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    transition: box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.book-card p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.book-card .price {
+    font-weight: bold;
+    color: #1a8917;
+}
+
+.book-card .discount {
+    color: #e53935;
+}
+
+.stock-status {
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.stock-status.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.stock-status.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.stock-status.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    margin-top: 12px;
+    background: #892CDC;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.add-to-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.add-to-cart:hover:not(:disabled) {
+    background: #6b19b8;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1199px) {
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #444;
+}
+
+.no-results h2 {
+    font-size: 2rem;
+    color: #e53935;
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    font-size: 1.1rem;
+    color: #666;
+}

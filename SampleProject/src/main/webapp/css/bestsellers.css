@@ -1,0 +1,228 @@
+/* =======================================
+   GOD-LEVEL CSS: Bestsellers Page Styling
+   ======================================= */
+
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(145deg, #f5f7fa, #e2e8f0);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    padding: 60px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #222;
+    background: linear-gradient(to right, #892CDC, #BC6FF1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeDown 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* ===== Grid Layout ===== */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 50px;
+    justify-content: center;
+    padding: 20px;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Book Card ===== */
+.book-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+    border-color: #BC6FF1;
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.book-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Price & Discount */
+.book-card .price {
+    color: #1a8917;
+    font-weight: bold;
+}
+
+.book-card .discount {
+    color: #e53935;
+    font-weight: bold;
+}
+
+/* ===== Stock Badge ===== */
+.stock-status {
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.stock-status.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.stock-status.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.stock-status.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ===== Add to Cart Form ===== */
+.book-card form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+.qty-input {
+	display: none;
+    width: 60px;
+    padding: 6px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.btn-add {
+    padding: 10px 18px;
+    background: #892CDC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(137, 44, 220, 0.2);
+}
+
+.btn-add:hover {
+    background: #6a1ab9;
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 6px 14px rgba(137, 44, 220, 0.4);
+}
+
+.btn-add:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1200px) {
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+    .book-card {
+        padding: 16px;
+    }
+    .book-card form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e4e4e4;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BC6FF1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #892CDC;
+}

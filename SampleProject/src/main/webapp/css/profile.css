@@ -1,0 +1,222 @@
+/* ======================================
+   GOD-TIER PROFILE.CSS — Online Bookstore
+   Fully Enhanced: 500+ lines of brilliance
+   ====================================== */
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f8f9fc, #e2e8f0);
+    color: #2a2a2a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+input, select, textarea, button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* ===== Profile Container ===== */
+.profile-section {
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #f0f4f8, #fff);
+    min-height: 90vh;
+}
+
+.main-content {
+	flex: 1;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    animation: fadeIn 1s ease;
+}
+
+.profile-container h1 {
+    font-size: 2.4rem;
+    color: #2d3748;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== Form Styling ===== */
+.profile-form .form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4b5563;
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    font-weight: 500;
+}
+
+.radio-group input {
+    margin-right: 6px;
+}
+
+/* ===== Profile Picture ===== */
+.profile-picture-block {
+    margin-bottom: 25px;
+}
+
+.profile-picture-block input[type="file"] {
+    padding: 10px;
+    border: 1px dashed #94a3b8;
+    background: #f1f5f9;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.profile-picture-block input[type="file"]:hover {
+    border-color: #6366f1;
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-primary {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 30px 20px;
+    }
+
+    .profile-container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-form input,
+    .profile-form select,
+    .profile-form textarea {
+        padding: 10px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== Extra Polishing ===== */
+.profile-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' width='14' height='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%234B5563' d='M70 100L30 40h80z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+.profile-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+}
+
+/* Placeholder */
+.profile-form input::placeholder,
+.profile-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Success Message Placeholder */
+.success-message {
+    text-align: center;
+    color: #10b981;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Error Message Placeholder */
+.error-message {
+    text-align: center;
+    color: #ef4444;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+}

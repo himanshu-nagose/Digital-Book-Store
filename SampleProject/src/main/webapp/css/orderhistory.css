@@ -1,0 +1,98 @@
+.order-history-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.order-history-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #222;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.order-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background: #f9f9f9;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+/* Progress step base */
+.progress-step {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #888;
+    transition: all 0.3s ease;
+}
+
+/* Active steps */
+.progress-step.active {
+    background-color: #892CDC; /* Default purple */
+    color: white;
+}
+
+/* Green for placed */
+.progress-step.active.placed {
+    background-color: #28a745 !important; /* Green */
+}
+
+/* Remove connectors */
+/* 
+.progress-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 4px;
+    background: #ccc;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.progress-step.active:not(:last-child)::after {
+    background-color: #892CDC;
+}
+
+.progress-step.active.placed:not(:last-child)::after {
+    background-color: #28a745;
+}
+*/
+
+.empty {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    margin-top: 40px;
+}

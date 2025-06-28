@@ -1,0 +1,105 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #FEC5F6, #E0F7FA);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Confirmation Section */
+.confirmation {
+    max-width: 800px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    animation: fadeIn 1.3s ease;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-size: contain;
+}
+
+.confirmation h1 {
+    color: #03A6A1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: slideTop 0.8s ease-in-out;
+}
+
+.confirmation p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.confirmation .btn {
+    display: inline-block;
+    margin: 0 12px;
+    padding: 14px 28px;
+    background-color: #03A6A1;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.confirmation .btn:hover {
+    background-color: #028a88;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideTop {
+    0% { transform: translateY(-40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .confirmation {
+        margin: 40px 20px;
+        padding: 30px;
+    }
+
+    .confirmation h1 {
+        font-size: 2rem;
+    }
+
+    .confirmation .btn {
+        margin-top: 10px;
+    }
+}
+
+/* Make footer stick to bottom even with less content */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer.footer {
+    margin-top: auto;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
