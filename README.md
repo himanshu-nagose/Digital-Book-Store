@@ -1,8 +1,3 @@
-Thanks! Based on your clarification, here's the **updated `README.md`** file that accurately reflects the **Spring Boot setup via Spring Tool Suite (STS)**, with correct folder structure, setup steps, and versioning details:
-
----
-
-````markdown
 # 📚 Digital BookStore
 
 A full-featured **Online Bookstore Management System** built using **Spring Boot, Spring MVC, Hibernate, JSP, and MySQL**. It supports user operations like browsing books, adding to cart, placing orders, and admin operations like managing inventory, updating orders, and monitoring sales.
