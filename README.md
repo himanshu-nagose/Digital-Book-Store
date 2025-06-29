@@ -1,88 +1,138 @@
-# Digital-BookStore
+Thanks! Based on your clarification, here's the **updated `README.md`** file that accurately reflects the **Spring Boot setup via Spring Tool Suite (STS)**, with correct folder structure, setup steps, and versioning details:
 
 ---
 
+````markdown
 # 📚 Digital BookStore
 
-A full-fledged **Online Bookstore Management System** built using **Spring MVC, Hibernate, JSP, and MySQL**. The project includes features for both **users** and **administrators**, allowing book browsing, cart functionality, order management, and admin controls like adding/editing books and tracking orders.
+A full-featured **Online Bookstore Management System** built using **Spring Boot, Spring MVC, Hibernate, JSP, and MySQL**. It supports user operations like browsing books, adding to cart, placing orders, and admin operations like managing inventory, updating orders, and monitoring sales.
 
 ---
 
 ## 🌐 Live Demo
 
-> *Coming Soon...* (Optional: Deploy using platforms like [Render](https://render.com), [Vercel](https://vercel.com/), or \[AWS EC2] if applicable)
+> _Coming Soon..._
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer      | Technology Used                         |
-| ---------- | --------------------------------------- |
-| Backend    | Spring MVC, Spring Core, Hibernate ORM  |
-| Frontend   | JSP, HTML5, CSS3, JavaScript, Bootstrap |
-| Database   | MySQL                                   |
-| Build Tool | Apache Maven                            |
-| Server     | Apache Tomcat (v9+)                     |
-| IDE        | Eclipse / IntelliJ                      |
+| Layer           | Technology Used                          |
+|-----------------|------------------------------------------|
+| Backend         | Spring Boot, Spring MVC, Hibernate ORM   |
+| Frontend        | JSP, HTML5, CSS3, Bootstrap, JavaScript  |
+| Database        | MySQL                                    |
+| Build Tool      | Apache Maven                             |
+| Server          | Embedded Tomcat via Spring Boot          |
+| IDE             | Spring Tool Suite (STS)                  |
+| Java Version    | Java 17                                  |
 
 ---
 
-## 📦 Dependencies & Libraries
+## 🧱 Project Setup via Spring Tool Suite
 
-Make sure to include the following in your `pom.xml` file:
+You can recreate this project using the following steps:
 
-* **Spring Framework**
+### 🔧 Project Creation Steps:
 
-  * spring-webmvc
-  * spring-context
-* **Hibernate Core**
-* **MySQL Connector/J**
-* **JSTL (Java Standard Tag Library)**
-* **Servlet API**
-* **Jakarta Annotations**
-* **Bootstrap** (for styling in `jsp`)
+1. **Open STS** → `File > New > Spring Starter Project`
+2. Configure:
+   - **Type**: Maven
+   - **Language**: Java
+   - **Java Version**: 17
+   - **Group**: `com.Jan`
+   - **Artifact**: `Digital-BookStore`
+3. Select the following **dependencies**:
+   - Spring Web
+   - Spring Boot DevTools
+   - MySQL Driver
+   - Spring Data JPA
+   - Thymeleaf (optional, if used)
+4. Click **Finish**.
+
+### ▶️ Run the Project
+
+```bash
+Right click on project → Run As → Spring Boot App
+````
 
 ---
 
 ## 📁 Folder Structure
 
-```bash
+```
 Digital-BookStore/
 │
 ├── src/main/java/com/Jan/
-│   ├── controller/       # All Spring MVC controllers (Admin/User)
-│   ├── dao/              # DAO layer for data access
-│   ├── model/            # JavaBeans/Entities
-│   └── repository/       # JPA repositories
+│   ├── controller/       # Spring MVC controllers (User/Admin)
+│   ├── dao/              # DAO implementations (optional if not using Spring Data)
+│   ├── model/            # JPA entity classes
+│   └── repository/       # JPA repository interfaces
 │
 ├── src/main/webapp/
 │   ├── css/              # CSS styling files
-│   ├── js/               # JavaScript files
-│   ├── jsp/              # JSP files (views)
-│   └── WEB-INF/          # Config files, web.xml
+│   └── WEB-INF/views/    # All JSP files (views)
 │
-├── pom.xml               # Maven configuration
+├── src/main/resources/
+│   ├── application.properties  # DB and server configurations
+│
+├── pom.xml               # Maven dependencies
 └── README.md             # Project documentation
+```
+
+---
+
+## 📦 Dependencies in `pom.xml`
+
+Ensure you include the following:
+
+* `spring-boot-starter-web`
+* `spring-boot-devtools`
+* `spring-boot-starter-data-jpa`
+* `mysql-connector-java`
+* `javax.servlet-api`
+* `jstl`
+
+Example:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+</dependency>
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+</dependency>
 ```
 
 ---
 
 ## 🧰 Software Requirements
 
-Make sure the following tools are installed:
-
-* **Java JDK 8 or above**
-* **Apache Maven**
-* **Apache Tomcat 9+**
-* **MySQL Server**
-* **Eclipse IDE / IntelliJ IDEA**
-* **Postman** (for API testing if applicable)
+* Java 17
+* Spring Tool Suite (STS) or Eclipse
+* Apache Maven
+* MySQL Server
+* Tomcat (Embedded in Spring Boot)
 
 ---
 
-## 🚀 Setup & Installation Guide
-
-Follow these steps to run the project locally:
+## 🚀 Setup Guide
 
 ### 1️⃣ Clone the Repository
 
@@ -91,113 +141,104 @@ git clone https://github.com/himanshu-nagose/Digital-BookStore.git
 cd Digital-BookStore
 ```
 
-### 2️⃣ Import the Project in Eclipse/IntelliJ
+### 2️⃣ Open in Spring Tool Suite
 
-* Choose: **File > Import > Maven > Existing Maven Projects**
-* Select the root folder and finish.
+* File > Import > Maven > Existing Maven Projects > Select folder
 
-### 3️⃣ Create the MySQL Database
-
-Open MySQL and run:
+### 3️⃣ Configure MySQL Database
 
 ```sql
 CREATE DATABASE bookstore;
 ```
 
-Update your `hibernate.cfg.xml` or `application.properties` to reflect your DB credentials.
+Edit your `application.properties`:
 
-### 4️⃣ Install Dependencies
-
-Maven will automatically download dependencies on build.
-
-Or you can run:
-
-```bash
-mvn clean install
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/bookstore
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
 ```
 
-### 5️⃣ Deploy on Apache Tomcat
+### 4️⃣ Run the Application
 
-* Right-click project > Run As > Run on Server
-* Select Apache Tomcat v9
-* Go to `http://localhost:8080/Digital-BookStore`
+```bash
+Right-click project → Run As → Spring Boot App
+```
+
+Visit: `http://localhost:8080/`
 
 ---
 
 ## 👥 User Roles
 
-### 🔹 User
+### 👤 User
 
-* Sign up / login
-* Browse books
+* Register & login
+* Browse/search books
 * Add to cart
 * Place orders
-* Track order history
+* Track orders (status: placed → shipped → delivered)
 
-### 🔸 Admin
+### 🛠️ Admin
 
-* Add / update / delete books
-* View user info
-* Track and update order status
-* View total sales, order count
+* Manage books (add, edit, delete)
+* View all users & orders
+* Update order status
+* View total sales and order count
 
 ---
 
-## 🗺️ Project Roadmap
+## 🗺️ Roadmap
 
-### ✅ Phase 1: User Features
+### ✅ Phase 1
 
-* [x] Signup/Login
-* [x] Browse books (by title/author)
-* [x] Cart functionality
-* [x] Order placement
-* [x] Order history tracking
+* [x] User authentication
+* [x] Book browsing
+* [x] Cart and order placement
+* [x] Order history
 
-### ✅ Phase 2: Admin Features
+### ✅ Phase 2
 
 * [x] Admin login
-* [x] Book management (add/edit/delete)
-* [x] View all orders
-* [x] Update order status
-* [x] Sales dashboard
+* [x] Book management
+* [x] Order tracking
+* [x] Dashboard for analytics
 
-### 🔄 Phase 3: Enhancements (Planned/Future)
+### 🔄 Future Enhancements
 
-* [ ] REST APIs for frontend/backend separation
-* [ ] Deploy to cloud (AWS/Heroku)
-* [ ] Advanced search/filter
-* [ ] OTP/email-based authentication
-* [ ] Coupon code system
-
----
-
-## 🖼️ Screenshots
-
-> *You can add screenshots from your project’s UI here to make it visually appealing.*
+* [ ] REST APIs for frontend/backend split
+* [ ] JWT-based authentication
+* [ ] Deployment to cloud
+* [ ] Coupon support
+* [ ] Email notifications
 
 ---
 
-## 🧑‍💻 Author
+## 📸 Screenshots
+
+> Add images for homepage, cart, admin panel, order status, etc.
+
+---
+
+## 🙋 Author
 
 **Himanshu Nagose**
 
 * GitHub: [@himanshu-nagose](https://github.com/himanshu-nagose)
-* LinkedIn: *Add your LinkedIn link here*
-* Portfolio: *Add if available*
+* LinkedIn: [@himanshu-nagose](www.linkedin.com/in/himanshu-nagose)
 
 ---
 
-## 💡 Contribution
+## 💡 Contributing
 
-Contributions are welcome! Follow these steps:
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ---
-
-
-
