@@ -224,7 +224,7 @@ Visit: `http://localhost:8080/`
 **Himanshu Nagose**
 
 * GitHub: [@himanshu-nagose](https://github.com/himanshu-nagose)
-* LinkedIn: [@himanshu-nagose](www.linkedin.com/in/himanshu-nagose)
+* LinkedIn: [@himanshu-nagose](https://www.linkedin.com/in/himanshu-nagose)
 
 ---
 
