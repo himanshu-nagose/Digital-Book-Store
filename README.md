@@ -215,7 +215,7 @@ Visit: `http://localhost:8080/`
 
 ## 📸 Screenshots
 
-> Add images for homepage, cart, admin panel, order status, etc.
+> _Coming Soon..._
 
 ---
 
